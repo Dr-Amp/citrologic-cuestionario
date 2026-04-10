@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario Citrologic — Automatización</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c5530; border-bottom: 3px solid #4a8c4a; padding-bottom: 10px; }
+        h2 { color: #2c5530; margin-top: 30px; }
+        .intro { background: #e8f5e9; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .question { margin: 20px 0; padding: 15px; background: #fafafa; border-left: 4px solid #4a8c4a; border-radius: 0 5px 5px 0; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+        input[type="text"], textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+        textarea { height: 80px; resize: vertical; }
+        input[type="text"]:focus, textarea:focus { outline: none; border-color: #4a8c4a; box-shadow: 0 0 5px rgba(74,140,74,0.3); }
+        .submit-btn { background: #2c5530; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 20px; width: 100%; }
+        .submit-btn:hover { background: #1e3d22; }
+        .note { font-size: 12px; color: #666; margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍊 Cuestionario Citrologic</h1>
+        
+        <div class="intro">
+            <strong>Objetivo:</strong> Entender cómo trabajáis hoy y dónde la IA puede ahorraros tiempo y errores.<br>
+            <strong>Tiempo estimado:</strong> 10-15 minutos<br>
+            <strong>Confidencialidad:</strong> Esta información es solo para el diseño del sistema de automatización.
+        </div>
+
+        <form action="https://formspree.io/f/xwvwdqre" method="POST">
+            <input type="hidden" name="_subject" value="Cuestionario Citrologic - Respuestas">
+            <!-- Sección 1 -->
+            <h2>1. La empresa en números</h2>
+            
+            <div class="question">
+                <label for="hectareas">¿Cuántas hectáreas gestionáis (aprox.)?</label>
+                <input type="text" id="hectareas" name="hectareas" placeholder="Ej: 50 hectáreas">
+            </div>
+            
+            <div class="question">
+                <label for="toneladas">¿Toneladas de cítricos al año?</label>
+                <input type="text" id="toneladas" name="toneladas" placeholder="Ej: 2000 toneladas">
+            </div>
+            
+            <div class="question">
+                <label for="empleados_fijos">¿Cuántos empleados fijos?</label>
+                <input type="text" id="empleados_fijos" name="empleados_fijos" placeholder="Ej: 15">
+            </div>
+            
+            <div class="question">
+                <label for="temporales">¿Cuántos temporales en temporada alta?</label>
+                <input type="text" id="temporales" name="temporales" placeholder="Ej: 50">
+            </div>
+            
+            <div class="question">
+                <label for="temporada">¿Qué meses es la temporada de recolección?</label>
+                <input type="text" id="temporada" name="temporada" placeholder="Ej: Noviembre a Marzo">
+            </div>
+
+            <!-- Sección 2 -->
+            <h2>2. Tu día a día como COO</h2>
+            
+            <div class="question">
+                <label for="tareas_tiempo">¿Qué 3 tareas te quitan más tiempo cada semana?</label>
+                <textarea id="tareas_tiempo" name="tareas_tiempo" placeholder="Describe las tareas..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="eliminar_delegar">¿Qué tarea te gustaría eliminar o delegar YA?</label>
+                <textarea id="eliminar_delegar" name="eliminar_delegar" placeholder="Describe la tarea..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="informacion_cuesta">¿Qué información necesitas tener siempre a mano y te cuesta encontrar?</label>
+                <textarea id="informacion_cuesta" name="informacion_cuesta" placeholder="Describe qué información..."></textarea>
+            </div>
+
+            <!-- Sección 3 -->
+            <h2>3. Dynamics 365 — El "volcado de datos"</h2>
+            
+            <div class="question">
+                <label for="datos_dynamics">¿Qué datos metes tú directamente en Dynamics?</label>
+                <textarea id="datos_dynamics" name="datos_dynamics" placeholder="Describe los datos..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="quien_mas">¿Quién más mete datos en el programa?</label>
+                <input type="text" id="quien_mas" name="quien_mas" placeholder="Ej: La administrativa, el jefe de almacén...">
+            </div>
+            
+            <div class="question">
+                <label for="origen_datos">¿De dónde vienen esos datos antes de entrar en Dynamics?</label>
+                <textarea id="origen_datos" name="origen_datos" placeholder="Ej: papel, Excel, email, WhatsApp, otro programa..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="tiempo_perdido">¿Cuánto tiempo estimas que se pierde en meter datos a la semana?</label>
+                <input type="text" id="tiempo_perdido" name="tiempo_perdido" placeholder="Ej: 5 horas, 10 horas...">
+            </div>
+            
+            <div class="question">
+                <label for="errores_comunes">¿Qué errores son los más comunes al volcar datos?</label>
+                <textarea id="errores_comunes" name="errores_comunes" placeholder="Describe los errores..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="ya_automatico">¿Hay algo que ya esté automático y funcione bien?</label>
+                <textarea id="ya_automatico" name="ya_automatico" placeholder="Describe qué funciona bien..."></textarea>
+            </div>
+
+            <!-- Sección 4 -->
+            <h2>4. Herramientas que usáis hoy</h2>
+            
+            <div class="question">
+                <label for="excel">¿Usáis Excel? ¿Para qué?</label>
+                <textarea id="excel" name="excel" placeholder="Describe el uso de Excel..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="tablets_moviles">¿Alguien usa tablets o móviles en campo/almacén?</label>
+                <textarea id="tablets_moviles" name="tablets_moviles" placeholder="Sí/No y para qué..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="escaneres">¿Tenéis escáneres de código de barras?</label>
+                <textarea id="escaneres" name="escaneres" placeholder="Sí/No y cómo los usáis..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="otro_software">¿Usáis algún otro software aparte de Dynamics? ¿Cuál?</label>
+                <input type="text" id="otro_software" name="otro_software" placeholder="Ej: SAP, Oracle, software específico...">
+            </div>
+            
+            <div class="question">
+                <label for="comunicacion">¿Cómo os comunicáis los equipos (campo, almacén, oficina)?</label>
+                <textarea id="comunicacion" name="comunicacion" placeholder="Ej: WhatsApp, teléfono, email..."></textarea>
+            </div>
+
+            <!-- Sección 5 -->
+            <h2>5. Lo que te gustaría lograr</h2>
+            
+            <div class="question">
+                <label for="automatizar_1">Si pudieras automatizar 1 cosa mañana, ¿cuál sería?</label>
+                <textarea id="automatizar_1" name="automatizar_1" placeholder="Describe lo que automatizarías..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="quita_sueno">¿Qué te quita más el sueño operativamente?</label>
+                <textarea id="quita_sueno" name="quita_sueno" placeholder="Describe tu preocupación principal..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="proceso_mal">¿Hay algún proceso que sepas que funciona mal pero nadie ha arreglado?</label>
+                <textarea id="proceso_mal" name="proceso_mal" placeholder="Describe el proceso..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="exito">¿Qué éxito tendrías si esto funciona?</label>
+                <input type="text" id="exito" name="exito" placeholder='Ej: "ahorrar 10h/semana", "reducir errores un 80%"...'>
+            </div>
+
+            <!-- Sección 6 -->
+            <h2>6. Barreras y miedos</h2>
+            
+            <div class="question">
+                <label for="barreras">¿Qué te frena a automatizar cosas hoy?</label>
+                <textarea id="barreras" name="barreras" placeholder="Ej: tiempo, dinero, confianza, complejidad..."></textarea>
+            </div>
+            
+            <div class="question">
+                <label for="no_cambiar">¿Algo que NO quieras cambiar bajo ningún concepto?</label>
+                <textarea id="no_cambiar" name="no_cambiar" placeholder="Describe lo que no quieres cambiar..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar respuestas</button>
+            <p class="note">Tras enviar, verás una página de confirmación. Las respuestas llegarán automáticamente al email configurado en Formspree.</p>
+            
+            <p class="note">Al enviar, las respuestas se guardarán automáticamente y Diego recibirá una notificación.</p>
+        </form>
+    </div>
+
+
+</body>
+</html>
